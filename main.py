@@ -15,7 +15,6 @@ import joblib
 from pydantic import BaseModel
 from typing import List
 
-from Extras.figureapp import barC
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 from nltk.corpus import wordnet
@@ -241,14 +240,14 @@ def get_trends(woeid:int):
             trends.append(trend['name'])
         return{"Today's trends":trends}
 
-@app.get("/Barchart")
-async def bar_chart():
-    barC()
-    img = "Outputs/output_bar.jpg"
-    return FileResponse(img)
+# @app.get("/Barchart")
+# async def bar_chart():
+#     barC()
+#     img = "Outputs/output_bar.jpg"
+#     return FileResponse(img)
 
-@app.get("/piechart")
-async def pie_chart():
-    pieC()
-    img = "Outputs/output_pie.jpg"
-    return FileResponse(img)
+# @app.get("/piechart")
+# async def pie_chart():
+#     pieC()
+#     img = "Outputs/output_pie.jpg"
+#     return FileResponse(img)
